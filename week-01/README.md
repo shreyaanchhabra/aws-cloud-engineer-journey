@@ -1,0 +1,4 @@
+## root vs IAM vs Shared Responsbility model
+Root is the AWS account owner who signed in at start with his email and password. It is the master user and has complete access to the entire portal, including budgeting and billing. 
+IAM (Identity Account Management) is the service to create users and groups with specified roles and permissions. They follow principle of least privilege so people and applications only get the access they need to and day-to-day work is only done through IAM.
+The Shared Responsibility Model defines who secures what: AWS is responsible for security of the cloud (physical data centers, hardware, the underlying infrastructure), while you are responsible for security in the cloud (your data, configurations, and access controls).
