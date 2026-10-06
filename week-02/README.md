@@ -1,0 +1,3 @@
+# S3 Training Bucket Access Policy
+
+This IAM policy allows `s3:GetObject` and `s3:PutObject` on all objects in `my-training-bucket-Shreyaan`, so a training job can download datasets and upload results and checkpoints. It deliberately omits `s3:DeleteObject` so a bug or leaked credentials can't wipe the data, omits `s3:ListBucket` and bucket-level actions to keep the grant minimal (so `aws s3 ls` and `sync` will fail), and is pinned to a single bucket with a `/*` suffix, the object ARN form these actions require, to limit the blast radius. Note that S3 bucket names must be lowercase, so update the ARN if the real bucket is `my-training-bucket-shreyaan`.
